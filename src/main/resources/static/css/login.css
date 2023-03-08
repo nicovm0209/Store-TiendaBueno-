@@ -1,0 +1,76 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31 ene 2023, 20:21:08
+    Author     : Jeffrey Mojica S
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: linear-gradient(120deg,#65098C,#E68BFA);
+    height:100vh;
+    overflow: hidden; /*Si se escapa del area lo oculta*/
+}
+
+
+.center{
+    position: absolute;
+    top:50%;
+    left:50%;  
+    transform: translate(-50%,-50%); 
+    width:400px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.center h1{
+    
+    text-align: center;
+    padding:20px 0; /*Top y botton 20 y left y right 0*/
+    border-bottom: 1px solid silver; /*Linea gris*/
+    
+}
+
+.center form{    
+    padding: 0 40px; /*Corrimos lo que esta abajo de la  linea gris*/    
+}
+
+form .txt_field{
+    
+    position:relative;
+    border-bottom: 2px solid #adadad;
+    margin:30px 0; /*Espacio entre las etiquetas*/
+    
+}
+
+.txt_field input{
+    width:100%;
+    padding:0 5px;
+    height:40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+    top:50%;
+    left:5px;
+    color: #adadad;
+    transform:translateY(-50%);
+    font-size: 16px;
+   /* pointer-events: none;*/
+}
+
