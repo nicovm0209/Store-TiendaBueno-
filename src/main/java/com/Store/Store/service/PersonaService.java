@@ -39,6 +39,20 @@ public class PersonaService implements IPersonaService {
     public void delete(long id) {
         personaRepository.deleteById(id);
     }
+
+    @Override
+    public List<Persona> listAll(String palabraClave) {
+       if(palabraClave != null){
+            return personaRepository.findAll(palabraClave);
+            
+        }
+     return(List<Persona>)personaRepository.findAll();   
+    }
+
+    @Override
+    public Persona findByNombre(String username) {
+      return personaRepository.findByNombre(username); /*El findByNombre daba error entonces vamos al repository*/
+    }
     
     
 }

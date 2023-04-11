@@ -1,57 +1,59 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="plantilla/template::head"></head>
-    <body>
-        <header th:replace="plantilla/template::header"></header>
-    
-  
+    <body class="bg-dark">
+        <div class="container">
+            <header th:replace="plantilla/template::header"></header>
+            <h1 th:text="#{cliente.titulo}" style="color:white"></h1>
+            <div class="card-header bg-black text-white"></div>
+            <div class="card-body">
                 <div class="container">
                     <form th:object="${persona}" th:action="@{/save}" method="POST">
                         <input type="hidden" th:field="*{id}">
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="nombre">Nombre</label>                            
-                            <div class="col-sm-10">                                
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre}"  placeholder= "Nombre Cliente" id="nombres" aria-describedby="emailHelp">                            
-                            </div>                        
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="nombre" style="color: #ffffff">Nombre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre}" placeholder="Nombre Cliente" id="nombres" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="apellido1">Apellido 1</label>                            
-                            <div class="col-sm-10">                                
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido1}"  placeholder= "Primer Apellido" id="apellido1" aria-describedby="emailHelp">                            
-                            </div>                        
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="apellido1" style="color: #ffffff">Apellido 1</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido1}" placeholder="Primer Apellido" id="apellido1" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="apellido2">Apellido 2</label>                            
-                            <div class="col-sm-10">                                
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido2}"  placeholder= "Segundo Apellido" id="apellido2" aria-describedby="emailHelp">                            
-                            </div>                        
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="apellido2" style="color: #ffffff">Apellido 2</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido2}" placeholder="Segundo Apellido" id="apellido2" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="telefono">Telefono</label>                            
-                            <div class="col-sm-10">                                
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{telefono}"  placeholder= "Telefono" id="telefono" aria-describedby="emailHelp">                            
-                            </div>                        
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="telefono" style="color: #ffffff">Telefono</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{telefono}" placeholder="Telefono" id="telefono" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="email">Email</label>                            
-                            <div class="col-sm-10">                                
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{email}"  placeholder= "Email" id="email" aria-describedby="emailHelp">                            
-                            </div>                        
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="email" style="color: #ffffff">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{email}" placeholder="Email" id="email" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="form-group mb-3 row">                           
-                            <label  class="col-md-2 col-form-label" for="paises">Pais</label>                            
+                        <div class="form-group mb-3 row">
+                            <label class="col-md-2 col-form-label" for="paises" style="color: #ffffff">Pais</label>
                             <div class="col-sm-10">
                                 <select th:field="*{pais}" class="form-control form-control-sm col-md-6" id="pais" aria-describedby="emailHelp">
-                                    <option th:each="x:${paises}"
-                                            th:value="${x.id}"
-                                            th:text="${x.pais}"/>
+                                    <option th:each="x:${paises}" th:value="${x.id}" th:text="${x.pais}" />
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+                            <div class="card-footer" style="text-align: right; padding-top: 5vh">
+                                <button type="submit" class="btn btn-success" value="Guardar">Submit</button>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
+            <footer th:replace="plantilla/template::footer"></footer>
         </div>
     </body>
 </html>

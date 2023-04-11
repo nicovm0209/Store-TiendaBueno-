@@ -47,11 +47,7 @@ public class Userprincipal  implements UserDetails{
     }
      
      
-     
-     
-     
-     
-
+    
     @Override
     public String getPassword() {
     return this.persona.getPassword();

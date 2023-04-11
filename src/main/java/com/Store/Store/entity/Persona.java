@@ -10,6 +10,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -27,6 +30,42 @@ public class Persona implements Serializable {
     private String apellido2;
     private String telefono;
     private String email;
+    
+     private String password;
+    private int active;
+    private String roles ="";
+    private String permissions ="";
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+   
+
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public String getPermissions() {
+        return permissions;
+    }
+
 
     public void setId(long id) {
         this.id = id;
@@ -74,6 +113,30 @@ public class Persona implements Serializable {
 
     public String getEmail() {
         return email;
+    }
+
+    public List<String> getRoleList() {
+        if(this.roles.length()>0){
+            
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public List<String> getPermissionList() {
+        if(this.permissions.length()>0){
+            
+            return Arrays.asList(this.permissions.split(","));
+        }
+        return new ArrayList<>();
+    }
+
+    public void setPermission(String permissions) {
+        this.permissions = permissions;
     }
     
 }

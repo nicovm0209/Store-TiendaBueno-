@@ -12,9 +12,10 @@ import java.util.List;
  * @author keylo
  */
 public interface IPersonaService {
+      public List<Persona> listAll(String palabraClave);
       public List<Persona> getAllPersona();
     public Persona getPersonaById (long id);
     public void savePersona(Persona persona);
     public void delete (long id);
-    
+     public Persona findByNombre(String username);
 }
