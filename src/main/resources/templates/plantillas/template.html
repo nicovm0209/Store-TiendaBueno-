@@ -12,7 +12,8 @@
     
     <body>
         <!-- NAV BAR -->
-        <header th:fragment="header">
+        
+        <header  th:fragment="header">
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,21 +53,34 @@
     </div>
 </header>
 <div class="container"></div>
+
  <!-- FOOTER -->
- <footer th:fragment="footer" class="bg-dark text-white fixed-bottom">
-     <div> 
-         <p>Copyright Tienda &copy; 2022</p>
-         <a th:with-"urlBuilder-$(T(org.springframework.web.servlet.support.ServletUricomponentsBuilder).fromCurrent Request())" th:href="$(urlBuilder.replaceQueryParam ('lang', 'es').touristring())">ES</a>
+ 
+   <footer th:fragment="footer" class="text-center text-white" style="background-color: #0a4275;"> 
+            <!-- Grid container --> <div class="container p-4 pb-0"> <
+                !-- Section: CTA --> <section class="">
+                    <p class="d-flex justify-content-center align-items-center">
+                        <span class="me-3">Register for free</span> 
+                        <button type="button" class="btn btn-outline-light btn-rounded"> Sign up!
+                        </button> </p> </section> <!-- Section: CTA --> 
+            </div> <!-- Grid container --> <!-- Copyright --> 
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright: <a class="text-white" href="https://mdbootstrap.com/">
 
-<a th:with="urlBuilder-$(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder) fromCurrentRequest())" 
-   th:href="$(urlBuilder.replaceQueryParam('lang', 'en') touriString())">EN</a>
-<a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-                    th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
-</div>
+                </a> </div> <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}" th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a> 
+            <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}" th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a> <!-- Copyright --> </footer>
 
-</footer>
 
-</body>
+    </body>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
 
 </html>
 
